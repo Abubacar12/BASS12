@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="”en”">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+   <link rel="stylesheet" href="style.css">
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script>
+      const firebaseConfig = {
+  apiKey: "AIzaSyAxc9ol9bTBOLxD4zzsBkKIHEw1g90EU4o",
+  authDomain: "arduino2022-71260.firebaseapp.com",
+  projectId: "arduino2022-71260",
+  storageBucket: "arduino2022-71260.appspot.com",
+  messagingSenderId: "802917387452",
+  appId: "1:802917387452:web:4fe175c7d4a8ef1c5c54b9",
+  measurementId: "G-ERQTLRC7FD"
+
+}
+
+firebase.initializeApp(firebaseConfig)
+
+function ledOn(){
+    firebase.database().ref('SALA').set({estado:'LIGADA'})
+}
+function ledoff(){
+    firebase.database().ref('SALA').set({estado:'DESLIGADA'})
+}
+function ledOn(){
+    firebase.database().ref('QUARTO1').set({estado:'LIGADA'})
+}
+function ledoff(){
+    firebase.database().ref('QUARTO1').set({estado:'DESLIGADA'})
+
+}
+function ledOn(){
+    firebase.database().ref('QUARTO2').set({estado:'LIGADA'})
+}
+function ledoff(){
+    firebase.database().ref('QUARTO2').set({estado:'DESLIGADA'})
+}
+
+  </script>
+  <script src="app.js" defer></script>
+  <body>
+         <img src="foto.png" alt="width="100" height="100">      
+    <heade><h1>TME Education</h1> </heade></header>
+    <h3>Arduino week 2022</h3>
+    <h3>Faculdade De Engenharia UEM</h3>
+    <h2>Controle remoto de Iluminacao</h2>
+    <fieldset>
+            <legend>Sala</legend>
+
+            <div>
+                <button class="led on"onclick="ledon">ligar</button>
+                <button class="led off"onclick="ledoff">desligar</button>
+            </div>
+    </fieldset>
+         <br></br>
+
+    <fieldset>
+        <legend>Quarto1</legend>
+
+        <div>
+            <button class="led on"onclick="ledon1">ligar</button>
+            <button class="led off"onclick="ledoff1">desligar</button>
+        </div>
+</fieldset>
+         <br></br>
+<fieldset>
+    <legend>Quarto2</legend>
+
+    <div>
+        <button class="led on"onclick="ledon2">ligar</button>
+        <button class="led off"onclick="ledoff2">desligar</button>
+    </div>
+</fieldset>
+ 
+<footer>
+    <p>
+        <strong >Augusto</strong>
+
+      </p>
+</footer>    
+  </body>
+</html>
